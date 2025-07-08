@@ -1,0 +1,324 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    background-color: #1e1e2f; /* Matches Tkinter root bg */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #00ffcc; /* Matches Tkinter h1 color */
+    margin-bottom: 20px;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff6666; /* Matches Tkinter back button */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* For the new link button */
+}
+
+.back-button:hover {
+    background-color: #e05555;
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows panels to wrap on smaller screens */
+}
+
+.panel {
+    background-color: #2e2e3f; /* Matches Tkinter frame bg */
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1; /* Allows panels to take equal space */
+    min-width: 300px; /* Minimum width before wrapping */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.left-panel {
+    flex-basis: 60%; /* More space for alarm section */
+}
+
+.right-panel {
+    flex-basis: 35%; /* Less space for stopwatch/timer */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.clock-display {
+    font-family: 'Courier', monospace;
+    font-size: 52px;
+    color: #00ffcc;
+    margin-bottom: 20px;
+}
+
+/* Alarm Section */
+.alarm-inputs label {
+    font-size: 18px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+.alarm-inputs input[type="number"],
+.alarm-inputs select {
+    width: 60px;
+    padding: 8px;
+    font-size: 18px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #3e3e4f;
+    color: white;
+    margin-right: 10px;
+    -moz-appearance: textfield; /* Hide arrows for Firefox */
+}
+
+/* Hide arrows for Chrome, Safari, Edge */
+.alarm-inputs input[type="number"]::-webkit-outer-spin-button,
+.alarm-inputs input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#set-alarm-btn {
+    background-color: #00cc99; /* Matches Tkinter set alarm */
+    color: white;
+}
+
+#set-alarm-btn:hover {
+    background-color: #00b386;
+}
+
+.alarm-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+    background-color: #3e3e4f;
+    border-radius: 5px;
+    max-height: 250px; /* Limit height to allow scrolling */
+    overflow-y: auto; /* Enable scrolling */
+    border: 1px solid #555;
+}
+
+.alarm-list li {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #4e4e5f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alarm-list li:last-child {
+    border-bottom: none;
+}
+
+.alarm-list li .delete-alarm {
+    background-color: #cc3366;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.alarm-list li .delete-alarm:hover {
+    background-color: #b32d59;
+}
+
+
+/* Stopwatch and Timer */
+.display {
+    font-family: 'Helvetica', monospace;
+    font-size: 36px;
+    color: #00ffcc;
+    margin-bottom: 15px;
+    background-color: #3e3e4f;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.controls button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+.start-btn {
+    background-color: #3399ff; /* Matches Tkinter start */
+    color: white;
+}
+.start-btn:hover { background-color: #2d8ae6; }
+
+.stop-btn {
+    background-color: #ff9933; /* Matches Tkinter stop */
+    color: white;
+}
+.stop-btn:hover { background-color: #e68a2d; }
+
+.reset-btn {
+    background-color: #cc3366; /* Matches Tkinter reset */
+    color: white;
+}
+.reset-btn:hover { background-color: #b32d59; }
+
+
+.timer-input input {
+    width: 150px;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #3e3e4f;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .left-panel, .right-panel {
+        flex-basis: auto; /* Revert basis on small screens */
+        width: 100%;
+    }
+    .back-button {
+        position: static; /* Position static on small screens */
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Alarm Notification Styles */
+.alarm-modal {
+    display: none; /* Hidden by default - THIS IS THE CRITICAL LINE */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #2e2e3f; /* Same as panels */
+    margin: auto; /* Centered */
+    padding: 30px;
+    border: 1px solid #555;
+    width: 80%; /* Could be more specific like max-width */
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeInScale 0.3s ease-out; /* Simple entry animation */
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-content h3 {
+    font-size: 32px;
+    color: #00ffcc;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: white;
+    text-decoration: none;
+}
+
+#modal-ok-button {
+    background-color: #00cc99;
+    color: white;
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#modal-ok-button:hover {
+    background-color: #00b386;
+}

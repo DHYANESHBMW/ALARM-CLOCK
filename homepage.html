@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSB Engineering College - Alarm Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for the homepage to center content */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            background-color: #1e1e2f; /* Consistent with your app */
+            color: white;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        .homepage-content {
+            background-color: #2e2e3f;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .homepage-content h1 {
+            font-size: 48px;
+            color: #00ffcc;
+            margin-bottom: 20px;
+        }
+
+        .homepage-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .homepage-button {
+            padding: 15px 30px;
+            font-size: 22px;
+            font-weight: bold;
+            background-color: #3399ff; /* Blue, consistent with start button */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline for links */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block; /* Allows padding and margin for the button */
+        }
+
+        .homepage-button:hover {
+            background-color: #2d8ae6;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="homepage-content">
+        <h1>VSB ENGINEERING COLLEGE</h1>
+        <p>
+            Welcome to our specialized web application designed to help you manage your time effectively. 
+            Whether you need to set crucial alarms, time your study sessions with a stopwatch, or manage tasks 
+            with a countdown timer, this tool is here to enhance your productivity and punctuality.
+        </p>
+        <a href="alarm.html" class="homepage-button">Go to Alarm Clock</a>
+    </div>
+</body>
+</html>
